@@ -23,8 +23,8 @@ use rpc::admin_cli::OutputFormat;
 use rpc::forge::{Switch, SwitchList, SwitchSearchFilter};
 
 use super::args::Args;
-use crate::errors::{CarbideCliError, CarbideCliResult};
 use crate::cfg::cli_options::SortField;
+use crate::errors::{CarbideCliError, CarbideCliResult};
 use crate::rpc::ApiClient;
 use crate::{async_write, async_write_table_as_csv};
 

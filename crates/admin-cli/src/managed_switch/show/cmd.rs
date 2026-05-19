@@ -371,9 +371,10 @@ fn show_managed_switch_details_view(m: ManagedSwitchOutput) -> CarbideCliResult<
 
     let data = vec![
         ("  ID", m.switch_id),
-        ("  Serial Number", non_empty(m.serial_number)),
         ("  Slot Number", m.slot_number.map(|n| n.to_string())),
         ("  Tray Index", m.tray_index.map(|n| n.to_string())),
+        ("  Serial Number", non_empty(m.serial_number)),
+        ("  Rack ID", m.rack_id),
         ("  Power State", m.power_state),
         ("  Health", m.health_status),
         (
@@ -383,10 +384,6 @@ fn show_managed_switch_details_view(m: ManagedSwitchOutput) -> CarbideCliResult<
         ("  BMC", Some(String::new())),
         ("    IP", m.bmc_ip),
         ("    MAC", non_empty(m.bmc_mac)),
-        ("  Inventory", Some(String::new())),
-        ("    Expected Switch ID", m.expected_switch_id),
-        ("    Explored Endpoint", m.explored_endpoint),
-        ("    Rack ID", m.rack_id),
     ];
 
     for (key, value) in data {
